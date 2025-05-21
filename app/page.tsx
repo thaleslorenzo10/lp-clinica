@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { LeadFormModal } from "@/components/lead-form-modal"
 import {
   Clock,
   Calendar,
@@ -23,6 +22,7 @@ import { ChatDemo } from "@/components/chat-demo"
 import { CountdownTimer } from "@/components/countdown-timer"
 import { ResultsChart } from "@/components/results-chart"
 import { AnimatedStats } from "@/components/animated-stats"
+import { ComparisonSection } from "@/components/comparison-section"
 import { ProcessSteps } from "@/components/process-steps"
 import { SatisfactionChart } from "@/components/satisfaction-chart"
 import { GlassCard } from "@/components/ui/glass-card"
@@ -31,13 +31,29 @@ import { PremiumButton } from "@/components/ui/premium-button"
 import { PremiumCard } from "@/components/ui/premium-card"
 import { PremiumBadge } from "@/components/ui/premium-badge"
 import { MobileMenu } from "@/components/mobile-menu"
-import { ComparisonSection } from "@/components/comparison-section"
+
+// URL para agendamento de demonstração
+const DEMO_URL = "https://form.respondi.app/2Nmz0X7f"
 
 export default function LandingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const openModal = () => setIsModalOpen(true)
   const closeModal = () => setIsModalOpen(false)
+
+  // Função para redirecionar para a URL de demonstração e rastrear o evento
+  const redirectToDemo = () => {
+    // Rastrear evento de conversão no Facebook Pixel
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      ;(window as any).fbq("track", "Lead", {
+        content_name: "Agendamento de Demonstração",
+        content_category: "Demonstração VIP",
+      })
+    }
+
+    // Abrir URL em nova aba
+    window.open(DEMO_URL, "_blank")
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-dark-950">
@@ -68,10 +84,10 @@ export default function LandingPage() {
             </a>
           </nav>
           <div className="flex items-center gap-4">
-            <PremiumButton variant="gold" onClick={openModal} className="hidden md:flex">
+            <PremiumButton variant="gold" onClick={redirectToDemo} className="hidden md:flex">
               Agendar Demonstração
             </PremiumButton>
-            <MobileMenu onOpenModal={openModal} />
+            <MobileMenu onOpenModal={redirectToDemo} />
           </div>
         </div>
       </header>
@@ -102,7 +118,7 @@ export default function LandingPage() {
               intervenção humana.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <PremiumButton variant="gold" size="lg" onClick={openModal} className="w-full sm:w-auto">
+              <PremiumButton variant="gold" size="lg" onClick={redirectToDemo} className="w-full sm:w-auto">
                 <Zap className="mr-2 h-5 w-5" />
                 AGENDAR DEMONSTRAÇÃO VIP
               </PremiumButton>
@@ -116,7 +132,7 @@ export default function LandingPage() {
           </div>
           <div className="relative h-[350px] md:h-[500px] rounded-xl overflow-hidden shadow-2xl border border-white/10">
             <div className="absolute inset-0 bg-dark-900">
-              <ChatDemo />
+              <ChatDemo demoUrl={DEMO_URL} />
             </div>
           </div>
         </div>
@@ -513,7 +529,7 @@ export default function LandingPage() {
             <PremiumButton
               variant="gold"
               size="lg"
-              onClick={openModal}
+              onClick={redirectToDemo}
               className="px-6 py-5 md:px-12 md:py-7 text-base md:text-lg w-full sm:w-auto"
             >
               <Zap className="mr-2 h-4 w-4 md:h-5 md:w-5" />
@@ -620,7 +636,7 @@ export default function LandingPage() {
             <PremiumButton
               variant="gold"
               size="lg"
-              onClick={openModal}
+              onClick={redirectToDemo}
               className="px-6 py-5 md:px-12 md:py-7 text-base md:text-lg w-full sm:w-auto"
             >
               <Zap className="mr-2 h-4 w-4 md:h-5 md:w-5" />
@@ -635,8 +651,6 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-
-      <LeadFormModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   )
 }
