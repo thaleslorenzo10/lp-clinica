@@ -4,7 +4,12 @@ import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import Script from "next/script"
 
-const inter = Inter({ subsets: ["latin"] })
+// Otimização: Carregamento de fonte otimizado
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap", // Evita FOIT (Flash of Invisible Text)
+  preload: true,
+})
 
 export const metadata = {
   title: "Virtus IA - Assistente Virtual para Clínicas",
@@ -23,8 +28,12 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-        {/* Meta Pixel Code */}
-        <Script id="facebook-pixel" strategy="afterInteractive">
+        {/* Preconectar a domínios importantes */}
+        <link rel="preconnect" href="https://connect.facebook.net" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+
+        {/* Meta Pixel Code - Movido para o final do body para não bloquear renderização */}
+        <Script id="facebook-pixel" strategy="lazyOnload">
           {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
