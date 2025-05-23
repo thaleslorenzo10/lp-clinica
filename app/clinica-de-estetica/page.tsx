@@ -151,7 +151,7 @@ export default function LandingPage() {
               <PremiumBadge variant="outline">ROI Comprovado</PremiumBadge>
             </div>
             <PremiumHeading as="h1" size="xl" className="text-3xl md:text-5xl">
-              Sua clínica está deixando escapar R$30.000 por mês no WhatsApp
+              Sua clínica está deixando escapar R$40.000 por mês no WhatsApp
             </PremiumHeading>
             <p className="text-base md:text-lg text-white/80">
               Descubra como clínicas de estética que faturam acima de R$20 mil estão{" "}
