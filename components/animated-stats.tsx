@@ -24,7 +24,7 @@ export function AnimatedStat({ value, label, prefix = "", suffix = "", duration 
           observer.disconnect()
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.2 },
     )
 
     if (ref.current) {
