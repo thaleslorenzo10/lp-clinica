@@ -3,20 +3,14 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Check, X, Star, Clock, Users, TrendingUp, Zap, Target, AlertTriangle, Shield } from "lucide-react";
-
 const LorenzoLandingPage = () => {
-  return (
-    <div className="min-h-screen bg-gradient-hero text-foreground">
+  return <div className="min-h-screen bg-gradient-hero text-foreground">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-10 md:py-20 text-center">
         <div className="max-w-6xl mx-auto">
           {/* Logo */}
           <div className="mb-6 md:mb-8">
-            <img 
-              src="/lovable-uploads/b0e211b1-06e0-4fd9-972f-6ec4a4dcafea.png" 
-              alt="Lorenzo Media" 
-              className="h-12 md:h-16 mx-auto"
-            />
+            <img src="/lovable-uploads/b0e211b1-06e0-4fd9-972f-6ec4a4dcafea.png" alt="Lorenzo Media" className="h-12 md:h-16 mx-auto" />
           </div>
           <Badge className="mb-4 md:mb-6 text-sm md:text-lg px-3 md:px-6 py-1 md:py-2 bg-red border-red text-white">
             🔥 PARA CLÍNICAS QUE INVESTEM R$ 3MIL+ EM TRÁFEGO MAS ESTÃO FRUSTRADAS COM OS RESULTADOS
@@ -50,39 +44,31 @@ const LorenzoLandingPage = () => {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-            {[
-              {
-                icon: "💸",
-                title: "Você investe R$ 5.000, R$ 8.000, até R$ 15.000 em tráfego",
-                subtitle: "Orçamento alto, expectativa maior ainda... mas os resultados não aparecem"
-              },
-              {
-                icon: "📱",
-                title: "Leads chegam no WhatsApp e simplesmente... desaparecem",
-                subtitle: "Curiosos, pescadores de preço, gente que nem responde"
-              },
-              {
-                icon: "❌",
-                title: "CAC absurdo que inviabiliza o negócio (R$ 300+ por cliente)",
-                subtitle: "Impossível ter lucro pagando tanto para conseguir um cliente"
-              },
-              {
-                icon: "😤",
-                title: "Gestor/agência sempre pede \"mais orçamento\" para ter resultado",
-                subtitle: "\"Precisa investir mais para ver resultado\" - você já ouviu isso?"
-              },
-              {
-                icon: "🔄",
-                title: "Você repete estratégias antigas que já não funcionam",
-                subtitle: "Mesmos públicos, mesmos textos, mesmos resultados frustrantes"
-              },
-              {
-                icon: "🤯",
-                title: "Está sozinho, sem saber por onde começar a otimizar",
-                subtitle: "Não sabe se o problema é o público, o anúncio ou o funil"
-              }
-            ].map((pain, index) => (
-              <Card key={index} className="p-4 md:p-6 bg-navy-medium border-card-border hover:bg-navy-light transition-all duration-300">
+            {[{
+            icon: "💸",
+            title: "Você investe R$ 5.000, R$ 8.000, até R$ 15.000 em tráfego",
+            subtitle: "Orçamento alto, expectativa maior ainda... mas os resultados não aparecem"
+          }, {
+            icon: "📱",
+            title: "Leads chegam no WhatsApp e simplesmente... desaparecem",
+            subtitle: "Curiosos, pescadores de preço, gente que nem responde"
+          }, {
+            icon: "❌",
+            title: "CAC absurdo que inviabiliza o negócio (R$ 300+ por cliente)",
+            subtitle: "Impossível ter lucro pagando tanto para conseguir um cliente"
+          }, {
+            icon: "😤",
+            title: "Gestor/agência sempre pede \"mais orçamento\" para ter resultado",
+            subtitle: "\"Precisa investir mais para ver resultado\" - você já ouviu isso?"
+          }, {
+            icon: "🔄",
+            title: "Você repete estratégias antigas que já não funcionam",
+            subtitle: "Mesmos públicos, mesmos textos, mesmos resultados frustrantes"
+          }, {
+            icon: "🤯",
+            title: "Está sozinho, sem saber por onde começar a otimizar",
+            subtitle: "Não sabe se o problema é o público, o anúncio ou o funil"
+          }].map((pain, index) => <Card key={index} className="p-4 md:p-6 bg-navy-medium border-card-border hover:bg-navy-light transition-all duration-300">
                 <div className="flex items-start gap-3 md:gap-4">
                   <span className="text-2xl md:text-4xl flex-shrink-0">{pain.icon}</span>
                   <div>
@@ -90,8 +76,7 @@ const LorenzoLandingPage = () => {
                     <p className="text-sm md:text-base text-text-secondary">{pain.subtitle}</p>
                   </div>
                 </div>
-              </Card>
-            ))}
+              </Card>)}
           </div>
           
           <div className="text-center mt-8 md:mt-12 px-2">
@@ -106,45 +91,7 @@ const LorenzoLandingPage = () => {
       </section>
 
       {/* Authority Section */}
-      <section className="container mx-auto px-4 py-10 md:py-20 bg-navy-medium">
-        <div className="max-w-5xl mx-auto text-center">
-          <Badge className="mb-6 md:mb-8 text-sm md:text-lg px-4 md:px-6 py-1 md:py-2 bg-orange text-navy-dark">O ESPECIALISTA</Badge>
-          
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-6 md:mb-8 px-2">
-            <span className="text-orange">Lorenzo Silva</span> - O homem que já{" "}
-            <span className="text-green">SALVOU R$ 30 milhões</span> em campanhas quebradas
-          </h2>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
-            {[
-              { icon: TrendingUp, title: "R$ 30M+", subtitle: "otimizados em campanhas", desc: "Dinheiro que estava sendo desperdiçado e foi recuperado" },
-              { icon: Users, title: "94 clínicas", subtitle: "\"ressuscitadas\"", desc: "Clínicas que estavam no prejuízo e voltaram a lucrar" },
-              { icon: Target, title: "CAC médio", subtitle: "pós-otimização: R$ 87", desc: "Redução média de 73% no custo de aquisição" },
-              { icon: Zap, title: "Agente de IA", subtitle: "implementado em 47 clínicas", desc: "Conversão média aumentou 380% com automação inteligente" }
-            ].map((stat, index) => (
-              <Card key={index} className="p-4 md:p-6 bg-navy-dark border-card-border text-center hover:scale-105 transition-all duration-300">
-                <stat.icon className="w-8 md:w-12 h-8 md:h-12 text-orange mx-auto mb-3 md:mb-4" />
-                <h3 className="text-lg md:text-2xl font-bold text-orange mb-1 md:mb-2">{stat.title}</h3>
-                <p className="text-sm md:text-lg font-semibold text-text-primary mb-1 md:mb-2">{stat.subtitle}</p>
-                <p className="text-xs md:text-sm text-text-secondary">{stat.desc}</p>
-              </Card>
-            ))}
-          </div>
-          
-          <Card className="p-6 md:p-8 bg-navy-dark border-green">
-            <div className="flex justify-center gap-1 mb-3 md:mb-4">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 md:w-6 h-4 md:h-6 fill-yellow-400 text-yellow-400" />
-              ))}
-            </div>
-            <blockquote className="text-lg md:text-xl italic text-text-primary mb-3 md:mb-4 px-2">
-              "Em 45 minutos de call, Lorenzo identificou 5 vazamentos que eu não via há meses. 
-              A IA dele converteu 3x mais que meu atendimento manual."
-            </blockquote>
-            <cite className="text-sm md:text-base text-text-secondary">- Dra. Renata L., Clínica Premium SP</cite>
-          </Card>
-        </div>
-      </section>
+      
 
       {/* Case Study */}
       <section className="container mx-auto px-4 py-10 md:py-20">
@@ -266,44 +213,35 @@ const LorenzoLandingPage = () => {
           </p>
           
           <div className="grid gap-4 md:gap-6">
-            {[
-              {
-                number: "#1",
-                title: "Segmentação de Amador",
-                desc: "\"Mulheres 25-50 interessadas em beleza\" → Público genérico = CAC alto"
-              },
-              {
-                number: "#2", 
-                title: "Copy Generalista",
-                desc: "Usando textos que funcionam para qualquer negócio → Não conecta com dor específica"
-              },
-              {
-                number: "#3",
-                title: "Otimização Errada", 
-                desc: "Focando em cliques, alcance ou impressões → Gastando com quem não converte"
-              },
-              {
-                number: "#4",
-                title: "Zero Qualificação",
-                desc: "Todo mundo que clica vira lead → Leads ruins enchem o funil"
-              },
-              {
-                number: "#5",
-                title: "Funil Quebrado",
-                desc: "Lead entra no WhatsApp e some → 70% das conversões perdidas"
-              },
-              {
-                number: "#6",
-                title: "Sem Automação",
-                desc: "Dependendo de atendimento manual 9h-18h → Perdem leads fora do horário"
-              },
-              {
-                number: "#7",
-                title: "Métricas Erradas",
-                desc: "Comemorando vanity metrics → Não sabem se está dando lucro ou prejuízo"
-              }
-            ].map((error, index) => (
-              <Card key={index} className="p-4 md:p-6 bg-navy-dark border-red hover:bg-red/5 transition-all duration-300">
+            {[{
+            number: "#1",
+            title: "Segmentação de Amador",
+            desc: "\"Mulheres 25-50 interessadas em beleza\" → Público genérico = CAC alto"
+          }, {
+            number: "#2",
+            title: "Copy Generalista",
+            desc: "Usando textos que funcionam para qualquer negócio → Não conecta com dor específica"
+          }, {
+            number: "#3",
+            title: "Otimização Errada",
+            desc: "Focando em cliques, alcance ou impressões → Gastando com quem não converte"
+          }, {
+            number: "#4",
+            title: "Zero Qualificação",
+            desc: "Todo mundo que clica vira lead → Leads ruins enchem o funil"
+          }, {
+            number: "#5",
+            title: "Funil Quebrado",
+            desc: "Lead entra no WhatsApp e some → 70% das conversões perdidas"
+          }, {
+            number: "#6",
+            title: "Sem Automação",
+            desc: "Dependendo de atendimento manual 9h-18h → Perdem leads fora do horário"
+          }, {
+            number: "#7",
+            title: "Métricas Erradas",
+            desc: "Comemorando vanity metrics → Não sabem se está dando lucro ou prejuízo"
+          }].map((error, index) => <Card key={index} className="p-4 md:p-6 bg-navy-dark border-red hover:bg-red/5 transition-all duration-300">
                 <div className="flex items-start gap-3 md:gap-4">
                   <div className="bg-red text-white rounded-full w-10 md:w-12 h-10 md:h-12 flex items-center justify-center font-bold text-sm md:text-base flex-shrink-0">
                     {error.number}
@@ -316,8 +254,7 @@ const LorenzoLandingPage = () => {
                     <p className="text-sm md:text-base text-text-secondary">{error.desc}</p>
                   </div>
                 </div>
-              </Card>
-            ))}
+              </Card>)}
           </div>
           
           <Card className="p-6 md:p-8 bg-orange/10 border-orange mt-6 md:mt-8">
@@ -505,7 +442,7 @@ const LorenzoLandingPage = () => {
             </h2>
             <p className="text-lg md:text-xl text-navy-dark mb-6 md:mb-8">(Desconto de 99% - Por tempo limitado)</p>
             
-            <div className="bg-navy-dark p-4 md:p-8 rounded-xl mb-6 md:mb-8">
+            <div className="bg-white p-4 md:p-8 rounded-xl mb-6 md:mb-8">
               <h3 className="text-lg md:text-2xl font-bold text-text-primary mb-4 md:mb-6">O que está incluído:</h3>
               <div className="space-y-2 md:space-y-3 text-left">
                 <div className="flex justify-between items-start gap-3">
@@ -598,32 +535,24 @@ const LorenzoLandingPage = () => {
       <section className="container mx-auto px-4 py-10 md:py-20">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {[
-              {
-                text: "Pagaria R$ 5.000 só pela call. O Agente de IA está convertendo leads que eu jamais conseguiria.",
-                author: "Dr. Fernando K., Harmonização Facial"
-              },
-              {
-                text: "Em 60 minutos identifiquei onde estava perdendo R$ 3.000/mês. A IA já se pagou 20x.",
-                author: "Dra. Carla M., Estética Avançada"
-              },
-              {
-                text: "Melhor investimento que fiz em 2024. CAC caiu de R$ 280 para R$ 95.",
-                author: "Dra. Paula R., Depilação a Laser"
-              }
-            ].map((testimonial, index) => (
-              <Card key={index} className="p-4 md:p-6 bg-navy-medium border-green">
+            {[{
+            text: "Pagaria R$ 5.000 só pela call. O Agente de IA está convertendo leads que eu jamais conseguiria.",
+            author: "Dr. Fernando K., Harmonização Facial"
+          }, {
+            text: "Em 60 minutos identifiquei onde estava perdendo R$ 3.000/mês. A IA já se pagou 20x.",
+            author: "Dra. Carla M., Estética Avançada"
+          }, {
+            text: "Melhor investimento que fiz em 2024. CAC caiu de R$ 280 para R$ 95.",
+            author: "Dra. Paula R., Depilação a Laser"
+          }].map((testimonial, index) => <Card key={index} className="p-4 md:p-6 bg-navy-medium border-green">
                 <div className="flex justify-center gap-1 mb-3 md:mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 md:w-5 h-4 md:h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 md:w-5 h-4 md:h-5 fill-yellow-400 text-yellow-400" />)}
                 </div>
                 <blockquote className="text-base md:text-lg italic text-text-primary mb-3 md:mb-4">
                   "{testimonial.text}"
                 </blockquote>
                 <cite className="text-sm md:text-base text-text-secondary">- {testimonial.author}</cite>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -636,33 +565,25 @@ const LorenzoLandingPage = () => {
           </h2>
           
           <div className="space-y-4 md:space-y-6">
-            {[
-              {
-                q: "A call é realmente personalizada para minha clínica?",
-                a: "Sim. Analisamos suas campanhas específicas, seu público, seus procedimentos e criamos um plano sob medida."
-              },
-              {
-                q: "O Agente de IA funciona para qualquer procedimento?",
-                a: "Sim. Já implementamos para harmonização, preenchimento, botox, lipo, procedimentos íntimos, depilação a laser. Personalizamos para seu negócio."
-              },
-              {
-                q: "Quanto tempo para ver resultados?",
-                a: "A IA começa a funcionar imediatamente. Resultados nas campanhas entre 15-30 dias seguindo nossas recomendações."
-              },
-              {
-                q: "E se eu já tenho agência de tráfego?",
-                a: "Perfeito. Usamos nossa análise para otimizar o trabalho deles. Muitas vezes o problema não é a agência, mas a estratégia."
-              },
-              {
-                q: "Por que tão barato?",
-                a: "Queremos provar nosso valor. Sabemos que após ver os resultados, você vai querer implementar nossa metodologia completa."
-              }
-            ].map((faq, index) => (
-              <Card key={index} className="p-4 md:p-6 bg-navy-dark border-card-border">
+            {[{
+            q: "A call é realmente personalizada para minha clínica?",
+            a: "Sim. Analisamos suas campanhas específicas, seu público, seus procedimentos e criamos um plano sob medida."
+          }, {
+            q: "O Agente de IA funciona para qualquer procedimento?",
+            a: "Sim. Já implementamos para harmonização, preenchimento, botox, lipo, procedimentos íntimos, depilação a laser. Personalizamos para seu negócio."
+          }, {
+            q: "Quanto tempo para ver resultados?",
+            a: "A IA começa a funcionar imediatamente. Resultados nas campanhas entre 15-30 dias seguindo nossas recomendações."
+          }, {
+            q: "E se eu já tenho agência de tráfego?",
+            a: "Perfeito. Usamos nossa análise para otimizar o trabalho deles. Muitas vezes o problema não é a agência, mas a estratégia."
+          }, {
+            q: "Por que tão barato?",
+            a: "Queremos provar nosso valor. Sabemos que após ver os resultados, você vai querer implementar nossa metodologia completa."
+          }].map((faq, index) => <Card key={index} className="p-4 md:p-6 bg-navy-dark border-card-border">
                 <h3 className="text-lg md:text-xl font-bold text-orange mb-2 md:mb-3">{faq.q}</h3>
                 <p className="text-sm md:text-base text-text-secondary">{faq.a}</p>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -753,8 +674,6 @@ const LorenzoLandingPage = () => {
           © 2024 Lorenzo Media. Todos os direitos reservados. | Especialistas em Tráfego para Clínicas de Estética
         </p>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default LorenzoLandingPage;
